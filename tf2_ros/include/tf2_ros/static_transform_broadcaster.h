@@ -59,7 +59,7 @@ public:
       rclcpp::PublisherOptionsWithAllocator<AllocatorT>())
   {
     publisher_ = rclcpp::create_publisher<tf2_msgs::msg::TFMessage>(
-      node, "/tf_static", qos, options);
+      node, "tf_static", qos, options);
   }
 
   /** \brief Send a TransformStamped message

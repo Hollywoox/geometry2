@@ -37,7 +37,7 @@ from geometry_msgs.msg import TransformStamped
 
 class TransformBroadcaster:
     """
-    :class:`TransformBroadcaster` is a convenient way to send transformation updates on the ``"/tf"`` message topic.
+    :class:`TransformBroadcaster` is a convenient way to send transformation updates on the ``"tf"`` message topic.
     """
     def __init__(self, node, qos=QoSProfile(depth=100)):
         """
@@ -48,7 +48,7 @@ class TransformBroadcaster:
             :param node: The ROS2 node.
             :param qos: A QoSProfile or a history depth to apply to the publisher.
         """
-        self.pub_tf = node.create_publisher(TFMessage, "/tf", qos)
+        self.pub_tf = node.create_publisher(TFMessage, "tf", qos)
 
     def sendTransform(self, transform):
         """
